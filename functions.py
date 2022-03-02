@@ -53,3 +53,56 @@ def selector(files,outputs):
 def files_loader(path):
     files = os.listdir(path)
     return files
+
+def draw_circle(path):
+    img = cv2.imread(path)
+    img = resize(img, ratio = 0.2)
+    img_grey = grey(img)
+    rows, cols = img_grey.shape
+    
+    y_values=[]
+    for row in range(int(0.4*rows), int(0.6*rows)):
+        distance = 0
+        for col in range(cols):
+            distance+=1
+            if img_grey[row, col] > 30:
+                y_values.append((distance,row,col))
+                break
+    x_values=[]
+    for col in range(int(0.4*cols), int(0.6*cols)):
+        distance = 0
+        for row in range(rows):
+            distance+=1
+            if img_grey[row, col] > 30:
+                x_values.append((distance,row,col))
+                break
+
+    center = (min(x_values)[2], min(y_values)[1])
+    radius = int(min(x_values)[2] - min(y_values)[2])
+
+    print(center, radius)
+
+    img = cv2.circle(img, center, radius, (250,250,250), 5)
+
+    return show(img, path)
+
+def notch_selector(path):
+    img = cv2.imread(path)
+    #print(img.shape)
+    img_grey = grey(img)
+    _, cols = img_grey.shape
+    #print(img_grey.shape)
+    for row in range(10):
+        for col in range(cols):
+            if img_grey[row, col] > 30:
+                return False
+    return True
+
+def filename_sorter(path, phrase):
+    if phrase in path:
+        return True
+    return False
+
+    
+
+
