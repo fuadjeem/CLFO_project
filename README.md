@@ -15,8 +15,12 @@
 - transfer learning by preaperd RESNET model with last fully connected layer transformation. 
 - a) 140 images of right eye per class has been used as a training model that return 40% accuracy on tested data set
 - b) left eye images have been mirror inverted, which almost doubled complete data set returning 50% accuracy
-- 
-
+ 
+Proposal for the next steps
+- make data set larger by including upside down inverted images which will include croping images with the nocth.
+- binarysplit data set by label zero and others (this will enlarge complete data set and make decrese number of classes which will ressult in mich better accuracy)
+- images could be filterd to enhance regions where changes caused by illnes occurs (this will take a huge amount of time)
+- transfer learning based on different and approprite pretrained NET model
 
 
 
