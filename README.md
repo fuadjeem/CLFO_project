@@ -12,6 +12,10 @@
 - 256x256 gray images (one chanel) 1200 for each class
 - creating feedForward neural network model on 256x256 gray images
 - creating convolutional neural network model on 256x256 gray images
+- transfer learning by preaperd RESNET model with last fully connected layer transformation. 
+- a) 140 images of right eye per class has been used as a training model that return 40% accuracy on tested data set
+- b) left eye images have been mirror inverted, which almost doubled complete data set returning 50% accuracy
+- 
 
 
 
