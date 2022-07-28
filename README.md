@@ -23,4 +23,6 @@ Proposal for the next steps
 - transfer learning based on different and approprite pretrained NET model
 
 
-
+What was done: FeedForward convolutional and tranfser learning in Resnet18
+Results were good.
+Could i do Transfer learning on some other already train model that is simililar to data photos?
