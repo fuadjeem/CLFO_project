@@ -15,4 +15,5 @@ for path in paths:
             uniques.append(filename)
         else:
             os.remove(os.path.join(path, filename))
+            print()
 
